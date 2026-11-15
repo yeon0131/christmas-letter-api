@@ -1,4 +1,4 @@
-# 누가 썼게? 백엔드
+# 솔크시러 백엔드
 
 React 클라이언트에 JSON REST API를 제공하는 Spring Boot 백엔드입니다.
 
