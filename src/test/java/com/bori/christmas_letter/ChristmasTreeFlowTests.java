@@ -22,7 +22,7 @@ class ChristmasTreeFlowTests {
     @Test
     void treeOwnerCanCreateTreeAndFriendCanHangLockedLetter() {
         TreeDtos.CreateTreeResponse created = treeService.createTree(
-                new TreeDtos.CreateTreeRequest("션팡", TreeTheme.CLASSIC, OrnamentType.BLUE_BELL)
+                new TreeDtos.CreateTreeRequest("션팡", TreeTheme.CLASSIC)
         );
 
         treeService.addLetter(
@@ -38,7 +38,6 @@ class ChristmasTreeFlowTests {
         TreeDtos.OwnerTreeResponse ownerTree = treeService.getOwnerTree(created.slug(), created.adminKey());
 
         assertThat(publicTree.letterCount()).isEqualTo(1);
-        assertThat(publicTree.favoriteFish()).isEqualTo(OrnamentType.BLUE_BELL);
         assertThat(publicTree.ornaments()).hasSize(1);
         assertThat(publicTree.locked()).isTrue();
         assertThat(ownerTree.letters()).isEmpty();
@@ -48,7 +47,7 @@ class ChristmasTreeFlowTests {
     @Test
     void wrongAdminKeyCannotOpenOwnerTree() {
         TreeDtos.CreateTreeResponse created = treeService.createTree(
-                new TreeDtos.CreateTreeRequest("션팡", TreeTheme.SNOWY, OrnamentType.RED_BAUBLE)
+                new TreeDtos.CreateTreeRequest("션팡", TreeTheme.SNOWY)
         );
 
         assertThatThrownBy(() -> treeService.getOwnerTree(created.slug(), "wrong-key"))

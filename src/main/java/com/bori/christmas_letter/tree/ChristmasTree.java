@@ -50,7 +50,6 @@ public class ChristmasTree {
             String slug,
             String ownerName,
             TreeTheme theme,
-            OrnamentType favoriteFish,
             String adminKeyHash,
             Instant revealAt,
             Instant createdAt
@@ -58,7 +57,7 @@ public class ChristmasTree {
         this.slug = slug;
         this.ownerName = ownerName;
         this.theme = theme;
-        this.favoriteFish = favoriteFish;
+        this.favoriteFish = OrnamentType.RED_BAUBLE;
         this.adminKeyHash = adminKeyHash;
         this.revealAt = revealAt;
         this.createdAt = createdAt;
@@ -82,10 +81,6 @@ public class ChristmasTree {
 
     public TreeTheme getTheme() {
         return theme;
-    }
-
-    public OrnamentType getFavoriteFish() {
-        return favoriteFish;
     }
 
     public String getAdminKeyHash() {

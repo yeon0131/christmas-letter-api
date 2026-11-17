@@ -65,7 +65,6 @@ public class ChristmasTreeService {
                 slug,
                 request.ownerName().trim(),
                 request.theme(),
-                request.favoriteFish(),
                 AdminKeyHasher.hash(adminKey),
                 revealAt,
                 now
@@ -91,7 +90,6 @@ public class ChristmasTreeService {
                 tree.getSlug(),
                 tree.getOwnerName(),
                 tree.getTheme(),
-                tree.getFavoriteFish(),
                 tree.getRevealAt(),
                 tree.isLocked(now),
                 letters.size(),
@@ -145,7 +143,6 @@ public class ChristmasTreeService {
                 tree.getSlug(),
                 tree.getOwnerName(),
                 tree.getTheme(),
-                tree.getFavoriteFish(),
                 tree.getRevealAt(),
                 locked,
                 letters.size(),

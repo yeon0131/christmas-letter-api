@@ -28,7 +28,6 @@ class ChristmasRevealTests {
                 "testslug",
                 "션팡",
                 TreeTheme.CLASSIC,
-                OrnamentType.RED_BAUBLE,
                 AdminKeyHasher.hash(adminKey),
                 revealAt,
                 Instant.parse("2026-11-15T00:00:00Z")

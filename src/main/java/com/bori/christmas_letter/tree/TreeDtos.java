@@ -19,10 +19,7 @@ public final class TreeDtos {
             String ownerName,
 
             @NotNull(message = "트리 테마를 선택해 주세요.")
-            TreeTheme theme,
-
-            @NotNull(message = "대표 물고기를 선택해 주세요.")
-            OrnamentType favoriteFish
+            TreeTheme theme
     ) {
     }
 
@@ -48,7 +45,6 @@ public final class TreeDtos {
             String slug,
             String ownerName,
             TreeTheme theme,
-            OrnamentType favoriteFish,
             Instant revealAt,
             boolean locked,
             long letterCount,
@@ -72,7 +68,6 @@ public final class TreeDtos {
             String slug,
             String ownerName,
             TreeTheme theme,
-            OrnamentType favoriteFish,
             Instant revealAt,
             boolean locked,
             long letterCount,
