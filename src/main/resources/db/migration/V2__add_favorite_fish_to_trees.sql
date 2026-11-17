@@ -1,0 +1,5 @@
+ALTER TABLE trees
+    ADD COLUMN favorite_fish VARCHAR(30) NOT NULL DEFAULT 'RED_BAUBLE';
+
+ALTER TABLE trees
+    ALTER COLUMN favorite_fish DROP DEFAULT;

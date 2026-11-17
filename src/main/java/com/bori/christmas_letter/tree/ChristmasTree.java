@@ -1,5 +1,6 @@
 package com.bori.christmas_letter.tree;
 
+import com.bori.christmas_letter.letter.OrnamentType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -29,6 +30,10 @@ public class ChristmasTree {
     @Column(nullable = false, length = 20)
     private TreeTheme theme;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "favorite_fish", nullable = false, length = 30)
+    private OrnamentType favoriteFish;
+
     @Column(name = "admin_key_hash", nullable = false, length = 64)
     private String adminKeyHash;
 
@@ -45,6 +50,7 @@ public class ChristmasTree {
             String slug,
             String ownerName,
             TreeTheme theme,
+            OrnamentType favoriteFish,
             String adminKeyHash,
             Instant revealAt,
             Instant createdAt
@@ -52,6 +58,7 @@ public class ChristmasTree {
         this.slug = slug;
         this.ownerName = ownerName;
         this.theme = theme;
+        this.favoriteFish = favoriteFish;
         this.adminKeyHash = adminKeyHash;
         this.revealAt = revealAt;
         this.createdAt = createdAt;
@@ -75,6 +82,10 @@ public class ChristmasTree {
 
     public TreeTheme getTheme() {
         return theme;
+    }
+
+    public OrnamentType getFavoriteFish() {
+        return favoriteFish;
     }
 
     public String getAdminKeyHash() {
