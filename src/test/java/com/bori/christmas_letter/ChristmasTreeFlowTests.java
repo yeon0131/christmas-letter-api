@@ -40,7 +40,9 @@ class ChristmasTreeFlowTests {
         assertThat(publicTree.letterCount()).isEqualTo(1);
         assertThat(publicTree.ornaments()).hasSize(1);
         assertThat(publicTree.locked()).isTrue();
-        assertThat(ownerTree.letters()).isEmpty();
+        assertThat(ownerTree.letters()).hasSize(1);
+        assertThat(ownerTree.letters().getFirst().senderName()).isEqualTo("루돌프");
+        assertThat(ownerTree.letters().getFirst().content()).isNull();
         assertThat(ownerTree.letterCount()).isEqualTo(1);
     }
 

@@ -136,7 +136,7 @@ public class ChristmasTreeService {
         boolean locked = tree.isLocked(now);
         List<Letter> letters = letterRepository.findAllByTreeOrderByCreatedAtAsc(tree);
         List<OwnerLetterResponse> ownerLetters = locked
-                ? List.of()
+                ? letters.stream().map(this::toLockedOwnerLetter).toList()
                 : letters.stream().map(this::toOwnerLetter).toList();
 
         return new OwnerTreeResponse(
@@ -231,7 +231,20 @@ public class ChristmasTreeService {
         return new OwnerLetterResponse(
                 letter.getId(),
                 letter.getContent(),
-                letter.isIdentityRevealed() ? letter.getSenderName() : null,
+                letter.getSenderName(),
+                letter.isIdentityRevealed(),
+                letter.getOrnamentType(),
+                letter.getPositionX(),
+                letter.getPositionY(),
+                letter.getCreatedAt()
+        );
+    }
+
+    private OwnerLetterResponse toLockedOwnerLetter(Letter letter) {
+        return new OwnerLetterResponse(
+                letter.getId(),
+                null,
+                letter.getSenderName(),
                 letter.isIdentityRevealed(),
                 letter.getOrnamentType(),
                 letter.getPositionX(),
