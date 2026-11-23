@@ -39,6 +39,7 @@ class ChristmasTreeFlowTests {
 
         assertThat(publicTree.letterCount()).isEqualTo(1);
         assertThat(publicTree.ornaments()).hasSize(1);
+        assertThat(publicTree.ornaments().getFirst().senderName()).isEqualTo("루돌프");
         assertThat(publicTree.locked()).isTrue();
         assertThat(ownerTree.letters()).hasSize(1);
         assertThat(ownerTree.letters().getFirst().senderName()).isEqualTo("루돌프");

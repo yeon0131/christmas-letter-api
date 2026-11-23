@@ -34,6 +34,7 @@ public final class TreeDtos {
 
     public record OrnamentResponse(
             Long id,
+            String senderName,
             OrnamentType ornamentType,
             int positionX,
             int positionY,

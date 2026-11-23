@@ -220,6 +220,7 @@ public class ChristmasTreeService {
     private OrnamentResponse toOrnament(Letter letter) {
         return new OrnamentResponse(
                 letter.getId(),
+                letter.getSenderName(),
                 letter.getOrnamentType(),
                 letter.getPositionX(),
                 letter.getPositionY(),
